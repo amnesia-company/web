@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Amnesia
 
 Client-server system.
@@ -85,3 +86,7 @@ Amnesia/
 |-------------|-------------------------------------------------------------------------------------------------|
 | `frontend/` | [Amnesia-server-frontend](https://github.com/Bitsulov/Amnesia-server-frontend)                  |
 | `backend/`  | [Amnesia-server-backend](https://github.com/Bitsulov/Amnesia-server-backend) *(in development)* |
+=======
+# web
+This repository is used for web part of project and deploy
+>>>>>>> d4f85789724596088981bbbe5e896bc043778259
