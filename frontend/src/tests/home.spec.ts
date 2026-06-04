@@ -2,9 +2,9 @@ import { test, expect } from '@playwright/test';
 
 test('homepage has correct title', async ({ page }) => {
   await page.goto('/');
-  
+
   await expect(page).toHaveTitle(/Amnesia/);
-  
+
   const heading = page.getByRole('heading', { level: 1 });
   await expect(heading).toBeVisible();
 });

@@ -14,8 +14,8 @@ import { rootReducer } from './rootReducer';
 
 /** Global Redux store instance. */
 export const store = configureStore({
-    reducer: rootReducer,
-})
+  reducer: rootReducer,
+});
 
 /** Inferred type of the entire Redux state tree. Use in useSelector callbacks. */
 export type RootState = ReturnType<typeof store.getState>;

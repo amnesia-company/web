@@ -1,15 +1,14 @@
 .link {
-    font-size: clamp(2rem, 1.5vw, 2.4rem);
-    font-weight: 700;
-    white-space: nowrap;
+  font-size: clamp(2rem, 1.5vw, 2.4rem);
+  font-weight: 700;
+  white-space: nowrap;
 
-    .active {
-
-    }
+  .active {
+  }
 }
 
 @media (min-width: 1930px) {
-    .link {
-        font-size: clamp(2.4rem, 1.4vw, 3.2rem);
-    }
+  .link {
+    font-size: clamp(2.4rem, 1.4vw, 3.2rem);
+  }
 }

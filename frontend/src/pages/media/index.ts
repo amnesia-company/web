@@ -1,1 +1,1 @@
-export {Media} from "./ui/media";
+export { Media } from './ui/media';

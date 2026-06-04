@@ -1,17 +1,17 @@
 {
-    "extends": "./tsconfig.app.json",
-    "compilerOptions": {
-        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tests.tsbuildinfo",
-        "types": ["vitest/globals", "vite/client", "@testing-library/jest-dom"],
-        "noUnusedLocals": false,
-        "noUnusedParameters": false
-    },
-    "include": [
-        "src/**/*.test.ts",
-        "src/**/*.test.tsx",
-        "src/**/*.spec.ts",
-        "src/**/*.spec.tsx",
-        "src/**/*.d.ts"
-    ],
-    "exclude": []
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tests.tsbuildinfo",
+    "types": ["vitest/globals", "vite/client", "@testing-library/jest-dom"],
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  },
+  "include": [
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/*.spec.ts",
+    "src/**/*.spec.tsx",
+    "src/**/*.d.ts"
+  ],
+  "exclude": []
 }

@@ -1,1 +1,1 @@
-export default "/beginners";
+export default '/beginners';

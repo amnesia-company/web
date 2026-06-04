@@ -1,4 +1,4 @@
-import type {RootState} from "app/store";
+import type { RootState } from 'app/store';
 
 /** Returns the current number of players online from the store. */
 export const selectOnlineCount = (state: RootState) => state.appConfig.onlineCount;

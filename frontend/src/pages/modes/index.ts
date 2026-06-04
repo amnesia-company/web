@@ -1,1 +1,1 @@
-export {Modes} from "./ui/modes";
+export { Modes } from './ui/modes';

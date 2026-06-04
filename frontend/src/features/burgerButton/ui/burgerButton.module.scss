@@ -1,97 +1,98 @@
-@use "app/variables.scss" as vars;
+@use 'app/variables.scss' as vars;
 
 .burger {
+  position: absolute;
+  background-color: vars.$bg-color-first;
+  top: 0;
+  right: 0;
+  padding: clamp(1.8rem, 3vw, 2.3rem) clamp(1.8rem, 3vw, 2.3rem) clamp(1.5rem, 3vw, 2rem);
+  border-bottom-left-radius: 3rem;
+  min-height: clamp(5rem, 8vw, 7rem);
+  cursor: pointer;
+  z-index: 100;
+
+  &:active {
+    transform: none;
+  }
+
+  &.pressed {
+    padding: clamp(1.2rem, 3vw, 1.7rem) clamp(2.3rem, 3vw, 2.8rem) clamp(1rem, 3vw, 1.5rem)
+      clamp(1.8rem, 3vw, 2.3rem);
+  }
+
+  &::before {
+    --clip: path('M 0 0 L 20 0 L 20 20 A 20 20 0 0 0 0 0 Z');
+    content: '';
     position: absolute;
-    background-color: vars.$bg-color-first;
+    width: 2rem;
+    height: 2rem;
     top: 0;
+    right: 100%;
+    background-color: vars.$bg-color-first;
+    clip-path: var(--clip);
+  }
+
+  &::after {
+    --clip: path('M 0 0 L 20 0 L 20 20 A 20 20 0 0 0 0 0 Z');
+    content: '';
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    top: 100%;
     right: 0;
-    padding: clamp(1.8rem, 3vw, 2.3rem) clamp(1.8rem, 3vw, 2.3rem) clamp(1.5rem, 3vw, 2rem);
-    border-bottom-left-radius: 3rem;
-    min-height: clamp(5rem, 8vw, 7rem);
-    cursor: pointer;
-    z-index: 100;
+    background-color: vars.$bg-color-first;
+    clip-path: var(--clip);
+  }
 
-    &:active {
-        transform: none;
-    }
+  .burger_inner {
+    position: relative;
+    height: clamp(1.7rem, 3vw, 2.2rem);
+    width: clamp(3rem, 4vw, 3.5rem);
 
-    &.pressed {
-        padding: clamp(1.2rem, 3vw, 1.7rem) clamp(2.3rem, 3vw, 2.8rem) clamp(1rem, 3vw, 1.5rem) clamp(1.8rem, 3vw, 2.3rem);
-    }
+    &.open {
+      width: 2.5rem;
+      height: 2.5rem;
 
-    &::before {
-        --clip: path('M 0 0 L 20 0 L 20 20 A 20 20 0 0 0 0 0 Z');
-        content: "";
-        position: absolute;
-        width: 2rem;
-        height: 2rem;
-        top: 0;
-        right: 100%;
-        background-color: vars.$bg-color-first;
-        clip-path: var(--clip);
-    }
+      .line {
+        opacity: 0;
+        border-radius: 0.2rem;
 
-    &::after {
-        --clip: path('M 0 0 L 20 0 L 20 20 A 20 20 0 0 0 0 0 Z');
-        content: "";
-        position: absolute;
-        width: 2rem;
-        height: 2rem;
-        top: 100%;
-        right: 0;
-        background-color: vars.$bg-color-first;
-        clip-path: var(--clip);
-    }
-
-    .burger_inner {
-        position: relative;
-        height: clamp(1.7rem, 3vw, 2.2rem);
-        width: clamp(3rem, 4vw, 3.5rem);
-
-        &.open {
-            width: 2.5rem;
-            height: 2.5rem;
-
-            .line {
-                opacity: 0;
-                border-radius: .2rem;
-
-                &:first-child {
-                    transform: translateY(-50%) rotate(-45deg);
-                    height: .4rem;
-                    border-radius: .2rem;
-                    opacity: 1;
-                }
-
-                &:last-child {
-                    transform: translateY(-50%) rotate(45deg);
-                    height: .4rem;
-                    opacity: 1;
-                }
-            }
+        &:first-child {
+          transform: translateY(-50%) rotate(-45deg);
+          height: 0.4rem;
+          border-radius: 0.2rem;
+          opacity: 1;
         }
 
-        .line {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            width: clamp(3rem, 4vw, 3.5rem);
-            height: .3rem;
-            background-color: vars.$primary-color;
-            border-radius: .1rem;
-            transition: vars.$transition-time;
-
-            &:first-child {
-                transform: translateY(calc(-50% - .7rem));
-            }
-
-            &:nth-child(2) {
-                transform: translateY(-50%);
-            }
-
-            &:last-child {
-                transform: translateY(calc(-50% + .7rem));
-            }
+        &:last-child {
+          transform: translateY(-50%) rotate(45deg);
+          height: 0.4rem;
+          opacity: 1;
         }
+      }
     }
+
+    .line {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: clamp(3rem, 4vw, 3.5rem);
+      height: 0.3rem;
+      background-color: vars.$primary-color;
+      border-radius: 0.1rem;
+      transition: vars.$transition-time;
+
+      &:first-child {
+        transform: translateY(calc(-50% - 0.7rem));
+      }
+
+      &:nth-child(2) {
+        transform: translateY(-50%);
+      }
+
+      &:last-child {
+        transform: translateY(calc(-50% + 0.7rem));
+      }
+    }
+  }
 }

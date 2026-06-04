@@ -1,6 +1,6 @@
-import { usePageContext } from "vike-react/usePageContext";
-import { App } from "app/App";
-import { NotFound } from "pages/notFound";
+import { usePageContext } from 'vike-react/usePageContext';
+import { App } from 'app/App';
+import { NotFound } from 'pages/notFound';
 
 /**
  * Vike error page.
@@ -9,11 +9,7 @@ import { NotFound } from "pages/notFound";
  * Redux and i18n providers are available.
  */
 export default function ErrorPage() {
-    const { is404 } = usePageContext();
+  const { is404 } = usePageContext();
 
-    return (
-        <App>
-            {is404 && <NotFound />}
-        </App>
-    );
+  return <App>{is404 && <NotFound />}</App>;
 }

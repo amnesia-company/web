@@ -1,7 +1,7 @@
-import aboutImg from "shared/icons/home-nav-icon1.png";
-import topImg from "shared/icons/home-nav-icon2.png";
-import registerImg from "shared/icons/home-nav-icon3.png";
-import newsImg from "shared/icons/home-nav-icon4.png";
+import aboutImg from 'shared/icons/home-nav-icon1.png';
+import topImg from 'shared/icons/home-nav-icon2.png';
+import registerImg from 'shared/icons/home-nav-icon3.png';
+import newsImg from 'shared/icons/home-nav-icon4.png';
 
 /**
  * A single navigation item for the HomeNav section.
@@ -13,11 +13,11 @@ import newsImg from "shared/icons/home-nav-icon4.png";
  * @property imageAlt - i18n key for the icon's alt text
  */
 type HomeNavItem = {
-    text: string;
-    ariaLabel: string;
-    href: string;
-    imageUrl: string;
-    imageAlt: string;
+  text: string;
+  ariaLabel: string;
+  href: string;
+  imageUrl: string;
+  imageAlt: string;
 };
 
 /**
@@ -25,8 +25,32 @@ type HomeNavItem = {
  * Each entry corresponds to one anchor section on the home page.
  */
 export const homeNavConfig: HomeNavItem[] = [
-    {text: "index.about", ariaLabel: "ariaLabel.goToHomeAbout", href: "#about", imageUrl: aboutImg, imageAlt: "index.aboutAlt"},
-    {text: "index.topPlayers", ariaLabel: "ariaLabel.goToHomeTopPlayers", href: "#top", imageUrl: topImg, imageAlt: "index.topPlayersAlt"},
-    {text: "index.register", ariaLabel: "ariaLabel.goToHomeRegister", href: "#register", imageUrl: registerImg, imageAlt: "index.registerAlt"},
-    {text: "index.news", ariaLabel: "ariaLabel.goToHomeNews", href: "#news", imageUrl: newsImg, imageAlt: "index.newsAlt"}
+  {
+    text: 'index.about',
+    ariaLabel: 'ariaLabel.goToHomeAbout',
+    href: '#about',
+    imageUrl: aboutImg,
+    imageAlt: 'index.aboutAlt',
+  },
+  {
+    text: 'index.topPlayers',
+    ariaLabel: 'ariaLabel.goToHomeTopPlayers',
+    href: '#top',
+    imageUrl: topImg,
+    imageAlt: 'index.topPlayersAlt',
+  },
+  {
+    text: 'index.register',
+    ariaLabel: 'ariaLabel.goToHomeRegister',
+    href: '#register',
+    imageUrl: registerImg,
+    imageAlt: 'index.registerAlt',
+  },
+  {
+    text: 'index.news',
+    ariaLabel: 'ariaLabel.goToHomeNews',
+    href: '#news',
+    imageUrl: newsImg,
+    imageAlt: 'index.newsAlt',
+  },
 ];

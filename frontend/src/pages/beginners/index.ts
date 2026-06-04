@@ -1,1 +1,1 @@
-export {Beginners} from "./ui/beginners";
+export { Beginners } from './ui/beginners';

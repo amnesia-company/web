@@ -1,47 +1,57 @@
-@use "app/variables.scss" as vars;
+@use 'app/variables.scss' as vars;
 
 .nav {
-    display: flex;
-    gap: clamp(1rem, 1.5vw, 2.3rem);
+  display: flex;
+  gap: clamp(1rem, 1.5vw, 2.3rem);
+  position: absolute;
+  align-items: center;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .underline {
     position: absolute;
-    align-items: center;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: -0.2rem;
+    height: 0.6rem;
+    background-color: vars.$primary-color;
+    border-top-right-radius: 2.8rem;
+    border-top-left-radius: 2.8rem;
+    transition:
+      left vars.$transition-time ease,
+      width vars.$transition-time ease;
+    pointer-events: none;
 
-    .underline {
-        position: absolute;
-        bottom: -.2rem;
-        height: .6rem;
-        background-color: vars.$primary-color;
-        border-top-right-radius: 2.8rem;
-        border-top-left-radius: 2.8rem;
-        transition: left vars.$transition-time ease, width vars.$transition-time ease;
-        pointer-events: none;
-
-        &.underline_appearing {
-            animation: expand-from-center vars.$transition-time ease;
-        }
-
-        &.underline_hiding {
-            animation: contract-to-center vars.$transition-time ease forwards;
-        }
+    &.underline_appearing {
+      animation: expand-from-center vars.$transition-time ease;
     }
+
+    &.underline_hiding {
+      animation: contract-to-center vars.$transition-time ease forwards;
+    }
+  }
 }
 
 @keyframes expand-from-center {
-    from { clip-path: inset(0 50%); }
-    to   { clip-path: inset(0 0%); }
+  from {
+    clip-path: inset(0 50%);
+  }
+  to {
+    clip-path: inset(0 0%);
+  }
 }
 
 @keyframes contract-to-center {
-    from { clip-path: inset(0 0%); }
-    to   { clip-path: inset(0 50%); }
+  from {
+    clip-path: inset(0 0%);
+  }
+  to {
+    clip-path: inset(0 50%);
+  }
 }
 
 @media (min-width: 1930px) {
-    .nav {
-        gap: clamp(2.3rem, 1.5vw, 3.5rem);
-    }
+  .nav {
+    gap: clamp(2.3rem, 1.5vw, 3.5rem);
+  }
 }

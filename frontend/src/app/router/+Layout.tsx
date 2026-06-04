@@ -1,5 +1,5 @@
-import {App} from "app/App";
-import type {ReactNode} from "react";
+import { App } from 'app/App';
+import type { ReactNode } from 'react';
 
 /**
  * Root layout component for the Vike routing system.
@@ -12,5 +12,5 @@ import type {ReactNode} from "react";
  * @see App - the component that supplies all application-wide providers.
  */
 export default function Layout({ children }: { children: ReactNode }) {
-    return <App>{children}</App>
+  return <App>{children}</App>;
 }

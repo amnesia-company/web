@@ -7,7 +7,7 @@ services:
       target: prod
       args:
         - VITE_SITE_URL=${SITE_URL}
-      #   - VITE_API_BASE=${API_BASE}
+        #   - VITE_API_BASE=${API_BASE}
         - VITE_SERVER_ADDRESS=${SERVER_ADDRESS}
       #   - VITE_CRYPTO_KEY=${CRYPTO_KEY}
     environment:

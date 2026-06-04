@@ -1,1 +1,1 @@
-export default "/modes";
+export default '/modes';

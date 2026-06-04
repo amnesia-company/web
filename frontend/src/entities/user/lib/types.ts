@@ -10,12 +10,12 @@
  * @property createdAt        - Account creation date in ISO 8601 format.
  */
 export interface UserType {
-    id: number;
-    name: string;
-    rating: number;
-    avatarUrl: string;
-    backgroundUrl: string;
-    status: string;
-    borderAvatarType: string;
-    createdAt: string;
+  id: number;
+  name: string;
+  rating: number;
+  avatarUrl: string;
+  backgroundUrl: string;
+  status: string;
+  borderAvatarType: string;
+  createdAt: string;
 }

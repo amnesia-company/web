@@ -1,9 +1,9 @@
-import { StoreProvider } from "./providers/storeProvider";
-import { I18nProvider } from "./providers/i18nProvider";
-import { InitProvider } from "./providers/initProvider";
-import type {ReactNode} from "react";
-import "./App.scss";
-import "./variables.scss";
+import { StoreProvider } from './providers/storeProvider';
+import { I18nProvider } from './providers/i18nProvider';
+import { InitProvider } from './providers/initProvider';
+import type { ReactNode } from 'react';
+import './App.scss';
+import './variables.scss';
 
 /**
  * Root application component.
@@ -13,18 +13,16 @@ import "./variables.scss";
  * InitProvider (initial data loading).
  */
 interface AppProps {
-    /** React child nodes to be wrapped by the providers. */
-    children: ReactNode;
+  /** React child nodes to be wrapped by the providers. */
+  children: ReactNode;
 }
 
-export function App({children}: AppProps) {
-    return (
-        <StoreProvider>
-            <I18nProvider>
-                <InitProvider>
-                    {children}
-                </InitProvider>
-            </I18nProvider>
-        </StoreProvider>
-    )
+export function App({ children }: AppProps) {
+  return (
+    <StoreProvider>
+      <I18nProvider>
+        <InitProvider>{children}</InitProvider>
+      </I18nProvider>
+    </StoreProvider>
+  );
 }

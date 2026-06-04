@@ -1,4 +1,4 @@
-import type {Dispatch, SetStateAction} from "react";
+import type { Dispatch, SetStateAction } from 'react';
 
 /**
  * Toggles the burger menu open/closed state.
@@ -6,5 +6,5 @@ import type {Dispatch, SetStateAction} from "react";
  * @param setIsOpenBurger - State setter from the parent component.
  */
 export function burgerClickHandler(setIsOpenBurger: Dispatch<SetStateAction<boolean>>) {
-    setIsOpenBurger(state => !state);
+  setIsOpenBurger((state) => !state);
 }

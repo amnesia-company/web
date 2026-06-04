@@ -2,4 +2,4 @@
 export const defaultTransitionTime = 250;
 
 /** Default displayed language of texts */
-export const defaultAppLanguage = "en";
+export const defaultAppLanguage = 'en';

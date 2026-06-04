@@ -1,4 +1,4 @@
-import type {RootState} from "app/store";
+import type { RootState } from 'app/store';
 
 /** Selects the current underline position; `null` when no nav link is active. */
 export const selectNavUnderline = (state: RootState) => state.navUnderline.position;

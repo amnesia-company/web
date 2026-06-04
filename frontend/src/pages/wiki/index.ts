@@ -1,1 +1,1 @@
-export {Wiki} from "./ui/wiki";
+export { Wiki } from './ui/wiki';

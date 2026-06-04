@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+
 # Amnesia
 
 Client-server system.
@@ -6,6 +7,7 @@ Client-server system.
 ## Tech Stack
 
 **Frontend:**
+
 - TypeScript
 - React 19
 - Vite
@@ -23,6 +25,7 @@ Client-server system.
 - Spring Boot
 
 **Infrastructure:**
+
 - Docker
 - Docker Compose
 - Nginx
@@ -31,11 +34,11 @@ Client-server system.
 
 Copy `.env.example` to `.env` and fill in the values.
 
-| Variable | Description |
-|---|---|
-| `SITE_URL` | Public site URL |
-| `SERVER_ADDRESS` | Game server address |
-| `PORT` | Frontend HTTP server port (default `3000`) |
+| Variable         | Description                                |
+| ---------------- | ------------------------------------------ |
+| `SITE_URL`       | Public site URL                            |
+| `SERVER_ADDRESS` | Game server address                        |
+| `PORT`           | Frontend HTTP server port (default `3000`) |
 
 ## Quick Start
 
@@ -83,10 +86,14 @@ Amnesia/
 ## Submodules
 
 | Submodule   | Repository                                                                                      |
-|-------------|-------------------------------------------------------------------------------------------------|
+| ----------- | ----------------------------------------------------------------------------------------------- |
 | `frontend/` | [Amnesia-server-frontend](https://github.com/Bitsulov/Amnesia-server-frontend)                  |
-| `backend/`  | [Amnesia-server-backend](https://github.com/Bitsulov/Amnesia-server-backend) *(in development)* |
+| `backend/`  | [Amnesia-server-backend](https://github.com/Bitsulov/Amnesia-server-backend) _(in development)_ |
+
 =======
+
 # web
+
 This repository is used for web part of project and deploy
->>>>>>> d4f85789724596088981bbbe5e896bc043778259
+
+> > > > > > > d4f85789724596088981bbbe5e896bc043778259

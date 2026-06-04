@@ -9,10 +9,10 @@ import { store } from 'app/store';
  * available to all descendant components via useSelector and useDispatch.
  */
 interface Props {
-    /** React child nodes. */
-    children: ReactNode;
+  /** React child nodes. */
+  children: ReactNode;
 }
 
 export function StoreProvider({ children }: Props) {
-    return <Provider store={store}>{children}</Provider>
+  return <Provider store={store}>{children}</Provider>;
 }

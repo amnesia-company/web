@@ -3,13 +3,13 @@ import { createInstance } from 'i18next';
 import { initReactI18next, I18nextProvider } from 'react-i18next';
 import { usePageContext } from 'vike-react/usePageContext';
 
-import en from "shared/locales/en.json";
-import ru from "shared/locales/ru.json";
-import {defaultAppLanguage} from "shared/const/const";
+import en from 'shared/locales/en.json';
+import ru from 'shared/locales/ru.json';
+import { defaultAppLanguage } from 'shared/const/const';
 
 const resources = {
-    en: { translation: en },
-    ru: { translation: ru },
+  en: { translation: en },
+  ru: { translation: ru },
 };
 
 /**
@@ -20,18 +20,18 @@ const resources = {
  * Falls back to English when the locale has no available translations.
  */
 export function I18nProvider({ children }: { children: ReactNode }) {
-    const { locale } = usePageContext();
+  const { locale } = usePageContext();
 
-    const i18nInstance = useMemo(() => {
-        const instance = createInstance();
-        instance.use(initReactI18next).init({
-            resources,
-            lng: locale,
-            fallbackLng: defaultAppLanguage,
-            interpolation: { escapeValue: false },
-        });
-        return instance;
-    }, [locale]);
+  const i18nInstance = useMemo(() => {
+    const instance = createInstance();
+    instance.use(initReactI18next).init({
+      resources,
+      lng: locale,
+      fallbackLng: defaultAppLanguage,
+      interpolation: { escapeValue: false },
+    });
+    return instance;
+  }, [locale]);
 
-    return <I18nextProvider i18n={i18nInstance}>{children}</I18nextProvider>;
+  return <I18nextProvider i18n={i18nInstance}>{children}</I18nextProvider>;
 }

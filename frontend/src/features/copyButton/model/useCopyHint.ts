@@ -1,4 +1,4 @@
-import {useState, useCallback, useRef} from "react";
+import { useState, useCallback, useRef } from 'react';
 
 /**
  * Manages the visibility state of a transient copy-confirmation hint.
@@ -13,16 +13,16 @@ import {useState, useCallback, useRef} from "react";
  *          `key` — incrementing value to force remount.
  */
 export function useCopyHint(duration = 2000) {
-    const [key, setKey] = useState(0);
-    const [visible, setVisible] = useState(false);
-    const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const [key, setKey] = useState(0);
+  const [visible, setVisible] = useState(false);
+  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
-    const show = useCallback(() => {
-        setKey(k => k + 1);
-        setVisible(true);
-        clearTimeout(timer.current);
-        timer.current = setTimeout(() => setVisible(false), duration);
-    }, [duration]);
+  const show = useCallback(() => {
+    setKey((k) => k + 1);
+    setVisible(true);
+    clearTimeout(timer.current);
+    timer.current = setTimeout(() => setVisible(false), duration);
+  }, [duration]);
 
-    return {visible, show, key};
+  return { visible, show, key };
 }

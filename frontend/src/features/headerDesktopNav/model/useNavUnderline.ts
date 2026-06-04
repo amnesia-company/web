@@ -1,9 +1,9 @@
-import {startTransition, useEffect, useRef, useState} from "react";
-import {usePageContext} from "vike-react/usePageContext";
-import {useDispatch, useSelector} from "react-redux";
-import {selectNavUnderline, selectNavUnderlineHasAppeared} from "./selectors";
-import {setNavUnderlinePosition, setNavUnderlineAppeared} from "./navUnderlineSlice";
-import type {NavUnderlinePosition} from "./navUnderlineSlice";
+import { startTransition, useEffect, useRef, useState } from 'react';
+import { usePageContext } from 'vike-react/usePageContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectNavUnderline, selectNavUnderlineHasAppeared } from './selectors';
+import { setNavUnderlinePosition, setNavUnderlineAppeared } from './navUnderlineSlice';
+import type { NavUnderlinePosition } from './navUnderlineSlice';
 
 /**
  * Manages the animated underline indicator beneath the active desktop nav link.
@@ -22,45 +22,45 @@ import type {NavUnderlinePosition} from "./navUnderlineSlice";
  * - `onAnimationEnd` — CSS animationend handler; clears position or marks as appeared
  */
 export const useNavUnderline = () => {
-    const {urlPathname} = usePageContext();
-    const dispatch = useDispatch();
-    const navRef = useRef<HTMLElement>(null);
-    const position = useSelector(selectNavUnderline);
-    const hasAppeared = useSelector(selectNavUnderlineHasAppeared);
-    const [displayPosition, setDisplayPosition] = useState<NavUnderlinePosition | null>(position);
-    const [isHiding, setIsHiding] = useState(false);
+  const { urlPathname } = usePageContext();
+  const dispatch = useDispatch();
+  const navRef = useRef<HTMLElement>(null);
+  const position = useSelector(selectNavUnderline);
+  const hasAppeared = useSelector(selectNavUnderlineHasAppeared);
+  const [displayPosition, setDisplayPosition] = useState<NavUnderlinePosition | null>(position);
+  const [isHiding, setIsHiding] = useState(false);
 
-    useEffect(() => {
-        const nav = navRef.current;
-        if (!nav) return;
-        const active = nav.querySelector<HTMLElement>("[aria-current=\"page\"]");
-        if (!active) {
-            dispatch(setNavUnderlinePosition(null));
-            return;
-        }
-        const {left: navLeft} = nav.getBoundingClientRect();
-        const {left, width} = active.getBoundingClientRect();
-        dispatch(setNavUnderlinePosition({left: left - navLeft, width}));
-    }, [urlPathname, dispatch]);
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+    const active = nav.querySelector<HTMLElement>('[aria-current="page"]');
+    if (!active) {
+      dispatch(setNavUnderlinePosition(null));
+      return;
+    }
+    const { left: navLeft } = nav.getBoundingClientRect();
+    const { left, width } = active.getBoundingClientRect();
+    dispatch(setNavUnderlinePosition({ left: left - navLeft, width }));
+  }, [urlPathname, dispatch]);
 
-    useEffect(() => {
-        startTransition(() => {
-            if (position) {
-                setDisplayPosition(position);
-                setIsHiding(false);
-            } else {
-                setIsHiding(true);
-            }
-        });
-    }, [position]);
+  useEffect(() => {
+    startTransition(() => {
+      if (position) {
+        setDisplayPosition(position);
+        setIsHiding(false);
+      } else {
+        setIsHiding(true);
+      }
+    });
+  }, [position]);
 
-    const onAnimationEnd = () => {
-        if (isHiding) {
-            setDisplayPosition(null);
-        } else {
-            dispatch(setNavUnderlineAppeared());
-        }
-    };
+  const onAnimationEnd = () => {
+    if (isHiding) {
+      setDisplayPosition(null);
+    } else {
+      dispatch(setNavUnderlineAppeared());
+    }
+  };
 
-    return {navRef, displayPosition, isHiding, hasAppeared, onAnimationEnd};
+  return { navRef, displayPosition, isHiding, hasAppeared, onAnimationEnd };
 };

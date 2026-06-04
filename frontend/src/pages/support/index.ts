@@ -1,1 +1,1 @@
-export {Support} from "./ui/support";
+export { Support } from './ui/support';

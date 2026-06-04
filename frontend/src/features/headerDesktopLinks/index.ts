@@ -1,1 +1,1 @@
-export {HeaderDesktopLinks} from "./ui/headerDesktopLinks";
+export { HeaderDesktopLinks } from './ui/headerDesktopLinks';

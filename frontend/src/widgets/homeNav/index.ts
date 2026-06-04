@@ -1,1 +1,1 @@
-export {HomeNav} from "./ui/homeNav";
+export { HomeNav } from './ui/homeNav';

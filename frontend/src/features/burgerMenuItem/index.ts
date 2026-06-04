@@ -1,1 +1,1 @@
-export {BurgerMenuItem} from "./ui/burgerMenuItem";
+export { BurgerMenuItem } from './ui/burgerMenuItem';

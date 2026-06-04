@@ -1,38 +1,41 @@
-@use "./variables.scss" as vars;
+@use './variables.scss' as vars;
 
 @font-face {
-    font-family: "MarvinVisions";
-    src: url("../shared/fonts/MarvinVisions-Bold.woff2") format("woff2"),
-         url("../shared/fonts/MarvinVisions-Bold.woff") format("woff");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'MarvinVisions';
+  src:
+    url('../shared/fonts/MarvinVisions-Bold.woff2') format('woff2'),
+    url('../shared/fonts/MarvinVisions-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-    font-family: "Manrope", sans-serif;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 10px;
-    --transition-time: #{vars.$transition-time};
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 10px;
+  --transition-time: #{vars.$transition-time};
 }
 
 html,
 body,
 div#root {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 body {
-    background: linear-gradient(0, vars.$bg-color-last 31%, vars.$bg-color-first 100%);
-    color: vars.$primary-color;
-    overflow-x: clip;
+  background: linear-gradient(0, vars.$bg-color-last 31%, vars.$bg-color-first 100%);
+  color: vars.$primary-color;
+  overflow-x: clip;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 input,
@@ -40,39 +43,39 @@ button,
 textarea,
 select,
 a {
-    font: inherit;
-    color: inherit;
+  font: inherit;
+  color: inherit;
 }
 
 img {
-    max-width: 100%;
-    display: block;
+  max-width: 100%;
+  display: block;
 }
 
 ::selection {
-    color: vars.$bg-color-first;
-    background: vars.$primary-color;
+  color: vars.$bg-color-first;
+  background: vars.$primary-color;
 }
 
 div#root {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
-    margin: 0 auto;
-    padding: 0 clamp(1.5rem, 4.75vw, 37.5rem);
-    width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4.75vw, 37.5rem);
+  width: 100%;
 }
 
 @media (min-width: 1200px) {
-    .container {
-        padding: 0 clamp(5rem, 6vw, 11rem);
-    }
+  .container {
+    padding: 0 clamp(5rem, 6vw, 11rem);
+  }
 }
 
 @media (min-width: 1600px) {
-    .container {
-        padding: 0 11rem;
-    }
+  .container {
+    padding: 0 11rem;
+  }
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 /**
  * Mouse cursor coordinates relative to the viewport.
@@ -7,8 +7,8 @@ import { useEffect, useState } from 'react'
  * @property y - Vertical position in pixels.
  */
 interface IMousePosition {
-    x: number
-    y: number
+  x: number;
+  y: number;
 }
 
 /**
@@ -18,15 +18,15 @@ interface IMousePosition {
  * @returns An object with the cursor coordinates { x, y } relative to the viewport.
  */
 export function useMousePosition() {
-    const [position, setPosition] = useState<IMousePosition>({ x: 0, y: 0 })
+  const [position, setPosition] = useState<IMousePosition>({ x: 0, y: 0 });
 
-    useEffect(() => {
-        const handler = (event: MouseEvent) => {
-            setPosition({ x: event.clientX, y: event.clientY })
-        }
-        window.addEventListener('mousemove', handler);
-        return () => window.removeEventListener('mousemove', handler);
-    }, [])
+  useEffect(() => {
+    const handler = (event: MouseEvent) => {
+      setPosition({ x: event.clientX, y: event.clientY });
+    };
+    window.addEventListener('mousemove', handler);
+    return () => window.removeEventListener('mousemove', handler);
+  }, []);
 
-    return position;
+  return position;
 }

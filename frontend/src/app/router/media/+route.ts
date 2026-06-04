@@ -1,1 +1,1 @@
-export default "/media";
+export default '/media';

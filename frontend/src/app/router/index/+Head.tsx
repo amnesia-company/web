@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next"
+import { useTranslation } from 'react-i18next';
 
 /**
  * Head tags for the home page.
@@ -7,11 +7,11 @@ import { useTranslation } from "react-i18next"
  * title.main and description.main.
  */
 export default function Head() {
-    const { t } = useTranslation();
-    return (
-        <>
-            <title>{t("title.main")}</title>
-            <meta name="description" content={t("description.main")} />
-        </>
-    )
+  const { t } = useTranslation();
+  return (
+    <>
+      <title>{t('title.main')}</title>
+      <meta name="description" content={t('description.main')} />
+    </>
+  );
 }

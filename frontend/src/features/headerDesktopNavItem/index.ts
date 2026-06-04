@@ -1,1 +1,1 @@
-export {HeaderDesktopNavItem} from "./ui/headerDesktopNavItem";
+export { HeaderDesktopNavItem } from './ui/headerDesktopNavItem';

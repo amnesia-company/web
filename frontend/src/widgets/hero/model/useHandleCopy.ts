@@ -1,5 +1,5 @@
-import {useCopyHint} from "features/copyButton";
-import {copyClickHandler} from "./copyClickHandler";
+import { useCopyHint } from 'features/copyButton';
+import { copyClickHandler } from './copyClickHandler';
 
 /**
  * Combines server address copy logic with hint visibility management.
@@ -9,11 +9,11 @@ import {copyClickHandler} from "./copyClickHandler";
  *          the hint; `hintKey` — key to force hint remount.
  */
 export function useHandleCopy(text: string) {
-    const {visible: hintVisible, show: showHint, key: hintKey} = useCopyHint();
+  const { visible: hintVisible, show: showHint, key: hintKey } = useCopyHint();
 
-    const handleCopy = () => {
-        copyClickHandler(text).then(showHint);
-    };
+  const handleCopy = () => {
+    copyClickHandler(text).then(showHint);
+  };
 
-    return {handleCopy, hintVisible, hintKey};
+  return { handleCopy, hintVisible, hintKey };
 }

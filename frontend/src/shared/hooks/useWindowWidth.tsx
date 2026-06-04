@@ -1,4 +1,4 @@
-import { startTransition, useEffect, useState } from 'react'
+import { startTransition, useEffect, useState } from 'react';
 
 /**
  * Returns the current browser window width in pixels.
@@ -7,15 +7,15 @@ import { startTransition, useEffect, useState } from 'react'
  * @returns The current viewport width in pixels.
  */
 export function useWindowWidth() {
-    const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(0);
 
-    useEffect(() => {
-        const handler = () => startTransition(() => setWidth(window.innerWidth));
-        handler();
+  useEffect(() => {
+    const handler = () => startTransition(() => setWidth(window.innerWidth));
+    handler();
 
-        window.addEventListener('resize', handler);
-        return () => window.removeEventListener('resize', handler);
-    }, [])
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, []);
 
-    return width;
+  return width;
 }

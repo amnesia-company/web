@@ -1,1 +1,1 @@
-export default "/profile/@id";
+export default '/profile/@id';

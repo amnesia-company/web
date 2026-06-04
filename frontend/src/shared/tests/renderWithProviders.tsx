@@ -7,7 +7,9 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
 import { rootReducer } from 'app/store/rootReducer';
 
-type PreloadedState = Parameters<typeof configureStore<ReturnType<typeof rootReducer>>>[0]['preloadedState'];
+type PreloadedState = Parameters<
+  typeof configureStore<ReturnType<typeof rootReducer>>
+>[0]['preloadedState'];
 
 /**
  * Options for the renderWithProviders helper.
@@ -16,8 +18,8 @@ type PreloadedState = Parameters<typeof configureStore<ReturnType<typeof rootRed
  * @property route          - Starting URL for the in-memory router (default: "/").
  */
 interface RenderWithProvidersOptions extends Omit<RenderOptions, 'wrapper'> {
-    preloadedState?: PreloadedState
-    route?: string
+  preloadedState?: PreloadedState;
+  route?: string;
 }
 
 /**
@@ -31,25 +33,23 @@ interface RenderWithProvidersOptions extends Omit<RenderOptions, 'wrapper'> {
  * @returns The Testing Library render result extended with the store instance.
  */
 export function renderWithProviders(
-    ui: ReactElement,
-    { preloadedState, route = '/', ...renderOptions }: RenderWithProvidersOptions = {}
+  ui: ReactElement,
+  { preloadedState, route = '/', ...renderOptions }: RenderWithProvidersOptions = {}
 ) {
-    const store = configureStore({
-        reducer: rootReducer,
-        preloadedState,
-    });
+  const store = configureStore({
+    reducer: rootReducer,
+    preloadedState,
+  });
 
-    function Wrapper({ children }: { children: ReactNode }) {
-        return (
-            <Provider store={store}>
-                <I18nextProvider i18n={i18n}>
-                    <MemoryRouter initialEntries={[route]}>
-                        {children}
-                    </MemoryRouter>
-                </I18nextProvider>
-            </Provider>
-        )
-    }
+  function Wrapper({ children }: { children: ReactNode }) {
+    return (
+      <Provider store={store}>
+        <I18nextProvider i18n={i18n}>
+          <MemoryRouter initialEntries={[route]}>{children}</MemoryRouter>
+        </I18nextProvider>
+      </Provider>
+    );
+  }
 
-    return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) }
+  return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
 }

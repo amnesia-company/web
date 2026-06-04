@@ -14,22 +14,22 @@ import { server } from './mswServer';
 beforeAll(() => server.listen({ onUnhandledRequest: 'warn' }));
 
 afterEach(() => {
-    server.resetHandlers()
-    cleanup()
+  server.resetHandlers();
+  cleanup();
 });
 
 afterAll(() => server.close());
 
 Object.defineProperty(window, 'matchMedia', {
-    writable: true,
-    value: vi.fn((query: string) => ({
-        matches: false,
-        media: query,
-        onchange: null,
-        addListener: vi.fn(),
-        removeListener: vi.fn(),
-        addEventListener: vi.fn(),
-        removeEventListener: vi.fn(),
-        dispatchEvent: vi.fn(),
-    })),
+  writable: true,
+  value: vi.fn((query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  })),
 });

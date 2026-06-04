@@ -1,6 +1,6 @@
-import {Modes} from "pages/modes";
+import { Modes } from 'pages/modes';
 
 /** Page component for the "/modes" route. */
 export default function Page() {
-    return <Modes />
+  return <Modes />;
 }

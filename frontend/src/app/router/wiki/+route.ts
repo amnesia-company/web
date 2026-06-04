@@ -1,1 +1,1 @@
-export default "/wiki";
+export default '/wiki';

@@ -1,1 +1,1 @@
-export {Rules} from "./ui/rules";
+export { Rules } from './ui/rules';
