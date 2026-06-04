@@ -13,7 +13,6 @@ playwright-report
 test-results
 
 # Dependencies and Build
-package-lock.json
 node_modules
 dist
 dist-ssr
