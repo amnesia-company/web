@@ -1,0 +1,39 @@
+name: amnesia
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: ../../frontend
+      target: prod
+      args:
+        - VITE_SITE_URL=${SITE_URL}
+      #   - VITE_API_BASE=${API_BASE}
+        - VITE_SERVER_ADDRESS=${SERVER_ADDRESS}
+      #   - VITE_CRYPTO_KEY=${CRYPTO_KEY}
+    environment:
+      NODE_ENV: production
+      PORT: ${PORT:-3000}
+    expose:
+      - 3000
+    # VITE_CRYPTO_KEY: ${CRYPTO_KEY}
+    # VITE_API_BASE: ${API_BASE_PROD}
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+
+  nginx:
+    container_name: nginx
+    image: nginx:1.27-alpine
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 64M

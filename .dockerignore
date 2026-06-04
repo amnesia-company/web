@@ -1,0 +1,34 @@
+# Dependencies
+**/node_modules
+**/venv
+**/.venv
+**/target
+**/build
+**/dist
+
+# IDE
+.git
+.gitignore
+**/.vscode
+**/.idea
+**/.DS_Store
+
+# Environment
+**/.env
+**/.env.*
+**/certs
+**/secrets
+
+# Logs
+**/logs
+**/*.log
+**/.npm
+**/.eslintcache
+**/.cache
+
+# Docs and media
+**/docs
+**/screenshots
+**/*.png
+**/*.jpg
+**/*.mp4
