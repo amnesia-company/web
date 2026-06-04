@@ -1,0 +1,82 @@
+{
+  "copyAlt": "Иконка копирования",
+  "copied": "Скопировано",
+  "backToMainPageDesktop": "Вернуться на главную страницу",
+  "backToMainPageMobile": "На главную страницу",
+  "ariaLabel": {
+    "openBurger": "Открыть бургер-меню",
+    "closeBurger": "Закрыть бургер-меню",
+    "changeTheme": "Сменить тему",
+    "goToSupport": "Перейти на страницу технической поддержки",
+    "goToNews": "Перейти на страницу новости",
+    "goToAbout": "Перейти на страницу О нас",
+    "goToModes": "Перейти на страницу режимы",
+    "goToBeginners": "Перейти на страницу новичкам",
+    "goToWiki": "Перейти на страницу вики",
+    "goToGoods": "Перейти на страницу товары",
+    "goToRules": "Перейти на страницу правила",
+    "goToMedia": "Перейти на страницу медиа",
+    "goToMyProfile": "Перейти на страницу своего профиля",
+    "goToDiscord": "Перейти в дискорд",
+    "goToTelegram":" Перейти в телеграм",
+    "goToVkontakte": "Перейти во вконтакте",
+    "goToTiktok": "Перейти в тикток",
+    "goToYoutube": "Перейти на ютуб",
+    "copy": "Копировать",
+    "backToMainPage": "Вернуться на главную страницу",
+    "goToHomeAbout": "Перейти к разделу \"О нас\"",
+    "goToHomeTopPlayers": "Перейти к разделу \"Топ игроков\"",
+    "goToHomeRegister": "Перейти к разделу \"Регистрация\"",
+    "goToHomeNews": "Перейти к разделу \"Новости\""
+  },
+  "title": {
+    "notFound": "Страница не найдена",
+    "main": "Главная страница"
+  },
+  "description": {
+    "notFound": "Страница, которую вы ищете, не существует или была удалена",
+    "main": "Amnesia — Minecraft сервер с уникальными режимами, ивентами и поддержкой 24/7. Более 700 игроков уже с нами — присоединяйся!"
+  },
+  "header": {
+    "news": "Новости",
+    "about": "О нас",
+    "modes": "Режимы",
+    "beginners": "Новичкам",
+    "wiki": "Вики",
+    "goods": "Товары",
+    "rules": "Правила",
+    "media": "Медиа",
+    "discordAlt": "Дискорд",
+    "telegramAlt": "Телеграм",
+    "vkontakteAlt": "Вконтакте",
+    "tiktokAlt": "Тикток",
+    "youtubeAlt": "Ютуб",
+    "logoAlt": "Логотип",
+    "avatarAlt": "Аватар пользователя",
+    "themeAlt": "Смена темы",
+    "supportAlt": "Техническая поддержка"
+  },
+  "index": {
+    "title_top": "Добро пожаловать",
+    "title_bottom": "на",
+    "title_name": "amnesia",
+    "advantagesTitle": "Почему мы?",
+    "advantage1": "Более 700+ игроков",
+    "advantage2": "Интересные ивенты",
+    "advantage3": "Поддержка 24/7",
+    "advantagesBgAlt": "Секция преимуществ",
+    "advantagesArrowAlt": "Стрелка вниз",
+    "about": "О нас",
+    "topPlayers": "Топ игроков",
+    "register": "Регистрация",
+    "news": "Новости",
+    "aboutAlt": "О нас",
+    "topPlayersAlt": "Топ игроков",
+    "registerAlt": "Регистрация",
+    "newsAlt": "Новости",
+    "navBgAlt": "Навигация по странице"
+  },
+  "error": {
+    "error": "Ошибка"
+  }
+}

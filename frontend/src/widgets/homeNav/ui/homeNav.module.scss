@@ -1,0 +1,137 @@
+@use "app/variables.scss" as vars;
+
+.navigation {
+    margin-top: clamp(5rem, 16vw, 10rem);
+    position: relative;
+
+    .bg {
+        position: absolute;
+        bottom: clamp(-22rem, -18vw, -5rem);
+        left: 0;
+        width: 100%;
+        height: auto;
+
+        @media (min-width: 1200px) {
+            display: none;
+        }
+    }
+
+    .desktop {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(3.1rem, 2.6vw, 5rem);
+
+        @media (min-width: 1930px) {
+            gap: clamp(5rem, 2.6vw, 6.7rem);
+        }
+
+        .item {
+            display: flex;
+            padding: clamp(2.2rem, 1.8vw, 3.5rem) clamp(2.5rem, 2.1vw, 4rem);
+            background-color: vars.$primary-color-bright;
+            color: vars.$nonblur-color;
+            position: relative;
+            border-radius: clamp(1rem, 2vw, 3.8rem);
+            overflow: hidden;
+
+            @media (min-width: 1930px) {
+                padding: clamp(3.5rem, 1.8vw, 4.6rem) clamp(4rem, 2.1vw, 5.4rem);
+                border-radius: clamp(3.8rem, 2vw, 5.1rem);
+            }
+
+            .number {
+                top: clamp(-8rem, -3.7vw, -3rem);
+                left: 3%;
+                position: absolute;
+                font-size: clamp(21.2rem, 17.7vw, 34rem);
+                font-family: "MarvinVisions", "sans-serif";
+
+                @media (min-width: 1930px) {
+                    top: clamp(-9.5rem, -3.7vw, -7.1rem);
+                    font-size: clamp(34rem, 17.7vw, 45.3rem);
+                }
+            }
+
+            .right {
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+                gap: clamp(7.2rem, 6vw, 11.5rem);
+
+                @media (min-width: 1930px) {
+                    gap: clamp(11.5rem, 6vw, 15.4rem);
+                }
+
+                .text {
+                    font-family: "MarvinVisions", "sans-serif";
+                    font-size: clamp(6rem, 5vw, 9.6rem);
+
+                    @media (min-width: 1930px) {
+                        font-size: clamp(9.6rem, 5vw, 12.8rem);
+                    }
+                }
+
+                .img {
+                    width: auto;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .mobile {
+        display: grid;
+        grid-template-columns: min-content min-content;
+        grid-template-rows: min-content min-content;
+        justify-content: center;
+        gap: clamp(3.8rem, 14vw, 9rem);
+        row-gap: clamp(2.5rem, 9vw, 6rem);
+
+        @media (min-width: 390px) {
+            gap: clamp(2rem, 5vw, 9rem);
+        }
+
+        .item {
+            width: clamp(12rem, 40vw, 22rem);
+            height: clamp(12rem, 40vw, 22rem);
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(vars.$primary-color-bright, .7);
+            border-radius: clamp(.8rem, 2.5vw, 1.6rem);
+            position: relative;
+            overflow: visible;
+
+            .wrapper {
+                flex: 1;
+            }
+
+            .text {
+                padding: clamp(1.6rem, 4.5vw, 2.8rem) clamp(.6rem, 1.8vw, 1.2rem) clamp(.6rem, 1.8vw, 1.2rem);
+                background-color: rgba(vars.$nonblur-color, .96);
+                border-radius: clamp(.8rem, 2.5vw, 1.6rem);
+                z-index: 1;
+
+                .title {
+                    padding: .2rem 0;
+                    font-weight: 700;
+                    font-size: clamp(1.2rem, 4vw, 2.2rem);
+                    text-align: center;
+                    background-color: vars.$primary-color-bright;
+                    color: vars.$nonblur-color;
+                    position: relative;
+                    border-radius: clamp(.4rem, 1.3vw, .8rem);
+                    z-index: 1;
+                }
+            }
+
+            .img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                transform: translate(-50%, -60%) scale(1.1);
+                height: auto;
+            }
+        }
+    }
+}

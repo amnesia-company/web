@@ -1,0 +1,207 @@
+@use "app/variables.scss" as vars;
+
+@keyframes hint-up {
+    0%   { opacity: 0; transform: translateX(-50%) translateY(.6rem); }
+    20%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+    75%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-.4rem); }
+}
+
+.hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    :global(.container) {
+        position: relative;
+        max-width: 98.4rem;
+
+        @media (min-width: 1930px) {
+            max-width: clamp(98.4rem, 51.25vw, 131.2rem);
+        }
+    }
+
+    .title {
+        font-family: "MarvinVisions", sans-serif;
+        text-align: center;
+        font-size: clamp(5rem, 14.84vw, 7.6rem);
+        color: vars.$secondary-color;
+        line-height: .8;
+
+        @media (min-width: 1930px) {
+            font-size: clamp(7.6rem, 3.96vw, 10.1rem);
+        }
+
+        .top {
+            font-size: clamp(3.1rem, 9.6vw, 8.10rem);
+            font-family: "MarvinVisions", sans-serif;
+
+            @media (min-width: 1200px) {
+                text-shadow: 0 .7rem 5rem rgba(0, 0, 0, .75);
+            }
+
+            @media (min-width: 1930px) {
+                font-size: clamp(8.1rem, 4.22vw, 10.8rem);
+                text-shadow: 0 clamp(.7rem, .36vw, .9rem) clamp(5rem, 2.6vw, 6.7rem) rgba(0, 0, 0, .75);
+            }
+        }
+
+        .bottom {
+            font-size: clamp(6rem, 18.75vw, 16rem);
+            font-family: "MarvinVisions", sans-serif;
+
+            @media (min-width: 1200px) {
+                text-shadow: 0 .7rem 5rem rgba(0, 0, 0, .5);
+            }
+
+            @media (min-width: 1930px) {
+                font-size: clamp(16rem, 8.33vw, 21.3rem);
+                text-shadow: 0 clamp(.7rem, .36vw, .9rem) clamp(5rem, 2.6vw, 6.7rem) rgba(0, 0, 0, .5);
+            }
+
+            .title {
+                color: vars.$primary-color-bright;
+                font-size: clamp(6rem, 18.75vw, 16rem);
+                font-family: "MarvinVisions", sans-serif;
+
+                @media (min-width: 1930px) {
+                    font-size: clamp(16rem, 8.33vw, 21.3rem);
+                }
+            }
+        }
+    }
+
+    .info {
+        display: flex;
+        align-items: center;
+        max-width: 78rem;
+        margin: 0 auto;
+
+        @media (min-width: 1200px) {
+            margin-top: 3.1rem;
+            gap: clamp(.6rem, 1.78vw, 1rem);
+        }
+
+        @media (min-width: 1930px) {
+            max-width: clamp(78rem, 40.63vw, 104rem);
+            margin-top: clamp(3.1rem, 1.61vw, 4.1rem);
+            gap: clamp(1rem, .52vw, 1.3rem);
+        }
+
+        .server_link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: vars.$nonblur-color;
+            margin-top: clamp(1.1rem, 3.26vw, 1.7rem);
+            padding: clamp(.8rem, 2.37vw, 1.25rem) 0;
+            border-radius: clamp(3rem, 8.9vw, 4.6rem);
+            gap: clamp(.6rem, 1.78vw, 2.1rem);
+            cursor: pointer;
+
+            @media (min-width: 1200px) {
+                margin-top: 0;
+                flex: 1;
+            }
+
+            @media (min-width: 1930px) {
+                padding: clamp(1.25rem, .65vw, 1.7rem) 0;
+                border-radius: clamp(4.6rem, 2.4vw, 6.1rem);
+                gap: clamp(2.1rem, 1.09vw, 2.8rem);
+            }
+
+            .server_link_text {
+                font-size: clamp(2rem, 5.94vw, 4rem);
+                font-weight: 600;
+                color: vars.$primary-color-bright;
+                user-select: none;
+
+                @media (min-width: 1930px) {
+                    font-size: clamp(4rem, 2.08vw, 5.3rem);
+                }
+            }
+
+            .copy {
+                user-select: none;
+                width: clamp(1.8rem, 4vw, 3.7rem);
+                height: clamp(2.1rem, 5vw, 4.7rem);
+
+                @media (min-width: 1930px) {
+                    width: clamp(3.7rem, 1.93vw, 4.9rem);
+                    height: clamp(4.7rem, 2.45vw, 6.3rem);
+                }
+            }
+
+            .hint {
+                position: absolute;
+                bottom: calc(100% + .6rem);
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: vars.$nonblur-color;
+                color: vars.$secondary-color;
+                font-size: clamp(1.4rem, 4.16vw, 2.1rem);
+                padding: clamp(.4rem, 1.19vw, .6rem) clamp(1.2rem, 3.56vw, 1.9rem);
+                border-radius: clamp(2rem, 5.94vw, 3rem);
+                white-space: nowrap;
+                pointer-events: none;
+                animation: hint-up 2s ease forwards;
+
+                @media (min-width: 1930px) {
+                    bottom: calc(100% + clamp(.6rem, .31vw, .8rem));
+                    font-size: clamp(2.1rem, 1.09vw, 2.8rem);
+                    padding: clamp(.6rem, .31vw, .8rem) clamp(1.9rem, .99vw, 2.5rem);
+                    border-radius: clamp(3rem, 1.56vw, 4rem);
+                }
+            }
+        }
+
+        .online {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            display: flex;
+            align-items: center;
+            font-size: clamp(1.8rem, 5.34vw, 3.6rem);
+            gap: clamp(.7rem, 2.08vw, 1.2rem);
+            padding: clamp(1rem, 2.97vw, 1.6rem) clamp(2.2rem, 6.53vw, 3.4rem);
+            border-radius: clamp(3rem, 8.9vw, 4.6rem);
+            background-color: vars.$nonblur-color;
+            transform: translateX(-50%);
+
+            @media (min-width: 401px) {
+                bottom: calc(100% + clamp(.3rem, 1vw, 1.2rem));
+            }
+
+            @media (min-width: 1200px) {
+                position: static;
+                transform: none;
+                flex-shrink: 0;
+            }
+
+            @media (min-width: 1930px) {
+                font-size: clamp(3.6rem, 1.88vw, 4.8rem);
+                gap: clamp(1.2rem, .63vw, 1.6rem);
+                padding: clamp(1.6rem, .83vw, 2.1rem) clamp(3.4rem, 1.77vw, 4.5rem);
+                border-radius: clamp(4.6rem, 2.4vw, 6.1rem);
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                width: clamp(1.5rem, 4.45vw, 2.3rem);
+                height: clamp(1.5rem, 4.45vw, 2.3rem);
+                border-radius: 50%;
+                background-color: #4ADE80;
+                flex-shrink: 0;
+
+                @media (min-width: 1930px) {
+                    width: clamp(2.3rem, 1.2vw, 3.1rem);
+                    height: clamp(2.3rem, 1.2vw, 3.1rem);
+                }
+            }
+        }
+    }
+}

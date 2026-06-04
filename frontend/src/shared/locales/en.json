@@ -1,0 +1,63 @@
+{
+  "copyAlt": "",
+  "copied": "",
+  "backToMainPageDesktop": "",
+  "backToMainPageMobile": "",
+  "ariaLabel": {
+    "openBurger": "",
+    "closeBurger": "",
+    "changeTheme": "",
+    "goToSupport": "",
+    "goToNews": "",
+    "goToAbout": "",
+    "goToModes": "",
+    "goToBeginners": "",
+    "goToWiki": "",
+    "goToGoods": "",
+    "goToRules": "",
+    "goToMedia": "",
+    "goToMyProfile": "",
+    "goToDiscord": "",
+    "goToTelegram": "",
+    "goToVkontakte": "",
+    "goToTiktok": "",
+    "goToYoutube": "",
+    "copy": "",
+    "backToMainPage": ""
+  },
+  "title": {
+    "notFound": "",
+    "main": ""
+  },
+  "description": {
+    "notFound": "",
+    "main": ""
+  },
+  "header": {
+    "news": "",
+    "about": "",
+    "modes": "",
+    "beginners": "",
+    "wiki": "",
+    "goods": "",
+    "rules": "",
+    "media": "",
+    "discordAlt": "",
+    "telegramAlt": "",
+    "vkontakteAlt": "",
+    "tiktokAlt": "",
+    "youtubeAlt": "",
+    "logoAlt": "",
+    "avatarAlt": "",
+    "themeAlt": "",
+    "supportAlt": ""
+  },
+  "index": {
+    "title_top": "",
+    "title_bottom": "",
+    "title_name": ""
+  },
+  "error": {
+    "error": ""
+  }
+}
