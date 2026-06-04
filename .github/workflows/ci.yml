@@ -47,8 +47,8 @@ jobs:
       - name: TypeScript type check
         run: npx tsc --noEmit
 
-  tests:
-    name: Tests
+  visual-tests:
+    name: Design checks
     runs-on: ubuntu-latest
     needs: [quick-checks]
     defaults:
@@ -64,7 +64,78 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Build frontend for visual tests
+        run: npm run build
+
+      - name: Run visual regression tests
+        id: visual-tests
+        run: npm run test:visual
+        env:
+          CI: true
+
+      - name: Upload visual regression report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-report
+          path: frontend/playwright-report/
+          retention-days: 30
+
+      - name: Comment PR on visual failure
+        if: github.event_name == 'pull_request' && steps.visual-tests.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = `## Visual Regression Tests Failed
+            
+            The visual tests detected differences in the UI. 
+            
+            **To fix:** 
+            1. Check the [artifacts](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for screenshots
+            2. If changes are intentional, update snapshots:
+               \`\`\`bash
+               cd frontend
+               npm run test:visual:update
+               git add tests/visual/__snapshots__/
+               git commit -m "chore: update visual snapshots"
+               git push
+               \`\`\`
+            `;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
+
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    needs: [visual-tests]
+    defaults:
+      run:
+        working-directory: ./frontend
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
           cache: npm
           cache-dependency-path: frontend/package-lock.json
 
@@ -79,7 +150,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    needs: [quick-checks]
+    needs: [visual-tests]
     defaults:
       run:
         working-directory: ./frontend
@@ -93,7 +164,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
           cache-dependency-path: frontend/package-lock.json
 
@@ -120,7 +191,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
           cache-dependency-path: frontend/package-lock.json
 
@@ -135,7 +206,7 @@ jobs:
         env:
           CI: true
 
-      - name: 📸 Upload Playwright report
+      - name: Upload Playwright report
         if: always()
         uses: actions/upload-artifact@v4
         with:
