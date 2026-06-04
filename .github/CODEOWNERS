@@ -2,10 +2,16 @@
 
 
 * @LeeFoS6092
+* @WenceNK
+* @az735760-ai
 
 *.md @LeeFoS6092
 README.md @LeeFoS6092
+*.md @WenceNK
+README.md @WenceNK
+*.md @az735760-ai
+README.md @az735760-ai
 
-*config.* @LeeFoS6092
-*.yml @LeeFoS6092
-*.yaml @LeeFoS6092
+*config.* @WenceNK
+*.yml @WenceNK
+*.yaml @WenceNK
